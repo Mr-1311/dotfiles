@@ -10,7 +10,7 @@
 
 ![](screen2.png)
 
-> my theme is vent from [](https://github.com/addy-dclxvi/Openbox-Theme-Collections)
+> my theme is vent from [/addy-dclxvi/Openbox-Theme-Collections](https://github.com/addy-dclxvi/Openbox-Theme-Collections)
 >
 > and icon theme is paper.
 
