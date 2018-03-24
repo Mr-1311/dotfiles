@@ -1,4 +1,4 @@
-#DOTFILES
+# Dotfiles
 
 ![](dot.png)
 
