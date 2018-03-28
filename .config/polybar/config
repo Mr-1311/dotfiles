@@ -14,15 +14,15 @@ spacing = 2
 padding-right = 3
 module-margin = 1
 
-font-0 = NotoSans-Regular:size=10;-1
-font-1 = MaterialIcons:size=10;0
+font-0 = NotoSans-Regular:size=11;2
+font-1 = MaterialIcons:size=11;2
 font-2 = Termsynu:size=8:antialias=false;-2
-font-3 = FontAwesome:size=10;0
+font-3 = FontAwesome:size=11;2
 
 
-modules-left =  close minify maximize cpu memory
+modules-left =  close minify maximize cpu sep memory
 modules-center = ewmh
-modules-right = volume backlight battery xkeyboard date 
+modules-right = volume sep backlight sep battery sep xkeyboard sep date 
 
 tray-position = right
 tray-padding = 2
@@ -66,17 +66,6 @@ label = %{F#ffffff}%percentage%%
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-font = 3
-bar-indicator-foreground = #ff
-bar-fill = ─
-bar-fill-font = 3
-bar-fill-foreground = #c9665e
-bar-empty = ─
-bar-empty-font = 3
-bar-empty-foreground = #44
 
 [module/battery]
 type = internal/battery
@@ -254,7 +243,7 @@ label-empty-foreground = #55
 type = custom/script
 exec = echo ""
 click-left = ~/.config/polybar/close.sh
-click-right = notify-send asd
+;click-right = 
 click-middle = poweroff
 format-padding = 1
 format-foreground = #c0392b
@@ -263,7 +252,7 @@ format-foreground = #c0392b
 type = custom/script
 exec = echo ""
 click-left = ~/.config/polybar/minify.sh
-click-right = notify-send asd
+;click-right = 
 click-middle = reboot
 format-padding = 1
 format-foreground = #f39c12
@@ -272,11 +261,14 @@ format-foreground = #f39c12
 type = custom/script
 exec = echo ""
 click-left = ~/.config/polybar/maximize.sh
-click-right = notify-send asd
+;click-right = 
 click-middle = systemctl suspend
 format-padding = 1
 format-foreground = #27ae60
 
+[module/sep]
+type = custom/script
+exec = echo "/"
 
 ; vim:ft=dosini
 ;-----------------------BOT-----------------------------
