@@ -19,8 +19,10 @@ font-1 = MaterialIcons:size=11;2
 font-2 = Termsynu:size=8:antialias=false;-2
 font-3 = FontAwesome:size=11;2
 
+border-bottom-size = 1
+border-bottom-color = #2980b9
 
-modules-left =  close minify maximize cpu sep memory
+modules-left =  close minify maximize cpu sep memory sep mpd
 modules-center = ewmh
 modules-right = volume sep backlight sep battery sep xkeyboard sep date 
 
@@ -269,6 +271,22 @@ format-foreground = #27ae60
 [module/sep]
 type = custom/script
 exec = echo "/"
+
+
+[module/mpd]
+type = internal/mpd
+format-online = <label-song> <icon-prev> <toggle> <icon-next>
+
+label-song = %title%
+
+icon-prev = 
+;icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+
+label-song-maxlen = 35
+label-song-ellipsis = true
 
 ; vim:ft=dosini
 ;-----------------------BOT-----------------------------

@@ -326,6 +326,12 @@
     </action>
   </keybind>  
 
+  <keybind key="C-A-l">
+    <action name="Execute">
+      <command>i3lock-fancy</command>
+    </action>
+  </keybind>  
+
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
         <command>amixer -q sset Master 5%+</command>
@@ -354,6 +360,22 @@
     <keybind key="W-Tab">
        <action name="Execute">
          <command>skippy-xd</command>
+       </action>
+    </keybind>
+
+    <keybind key="XF86AudioPlay">
+       <action name="Execute">
+         <command>mpc toggle</command>
+       </action>
+    </keybind>
+    <keybind key="XF86AudioPrev">
+       <action name="Execute">
+         <command>mpc prev</command>
+       </action>
+    </keybind>
+    <keybind key="XF86AudioNext">
+       <action name="Execute">
+         <command>mpc next</command>
        </action>
     </keybind>
 

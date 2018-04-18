@@ -20,5 +20,6 @@ setxkbmap -layout "tr,us" -option "grp:alt_caps_toggle" &
 feh --bg-fill ~/Pictures/Wallpapers/space.png &
 compton -b --config ~/.config/compton.conf &
 #compton -b &
-plank &
+#plank &
+docky &
 polybar -q top &
