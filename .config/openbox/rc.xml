@@ -332,6 +332,36 @@
     </action>
   </keybind>  
 
+  	<keybind key="W-Up"><action name="ToggleMaximize"/></keybind>
+  	<keybind key="W-Down"><action name="Iconify"/></keybind>
+  	<keybind key="W-Left">
+  		<action name="UnmaximizeFull"/>
+ 		 <action name="MoveResizeTo">
+    		<x>0</x>
+    		<y>0</y>
+    		<height>100%</height>
+    		<width>50%</width>
+  		 </action>
+	</keybind>
+	<keybind key="W-Right">
+  		<action name="UnmaximizeFull"/>
+ 		 <action name="MoveResizeTo">
+    		<x>-0</x>
+    		<y>0</y>
+    		<height>100%</height>
+    		<width>50%</width>
+  		 </action>
+	</keybind>
+
+	<keybind key="W-A-Left">
+      <action name="DirectionalTargetWest">
+        </action>
+	</keybind>
+	<keybind key="W-A-Right">
+      <action name="DirectionalTargetEast">
+        </action>
+	</keybind>
+
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
         <command>amixer -q sset Master 5%+</command>
@@ -365,17 +395,17 @@
 
     <keybind key="XF86AudioPlay">
        <action name="Execute">
-         <command>mpc toggle</command>
+         <command>music-toggle</command>
        </action>
     </keybind>
     <keybind key="XF86AudioPrev">
        <action name="Execute">
-         <command>mpc prev</command>
+         <command>music-prev</command>
        </action>
     </keybind>
     <keybind key="XF86AudioNext">
        <action name="Execute">
-         <command>mpc next</command>
+         <command>music-next</command>
        </action>
     </keybind>
 
