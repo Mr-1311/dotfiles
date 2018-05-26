@@ -314,6 +314,7 @@
   </keybind>
 
   <!-- my keybindings-->
+
   <keybind key="C-A-t">
     <action name="Execute">
       <command>termite</command>
@@ -325,6 +326,12 @@
       <command>rofi -show run</command>
     </action>
   </keybind>  
+
+  <keybind key="Menu">
+    <action name="ShowMenu">
+    	<menu>root-menu</menu>
+    </action>
+  </keybind>
 
   <keybind key="C-A-l">
     <action name="Execute">
@@ -352,13 +359,21 @@
     		<width>50%</width>
   		 </action>
 	</keybind>
-
+	
 	<keybind key="W-A-Left">
       <action name="DirectionalTargetWest">
         </action>
 	</keybind>
 	<keybind key="W-A-Right">
       <action name="DirectionalTargetEast">
+        </action>
+	</keybind>
+	<keybind key="W-A-Up">
+      <action name="DirectionalTargetNorth">
+        </action>
+	</keybind>
+	<keybind key="W-A-Down">
+      <action name="DirectionalTargetSouth">
         </action>
 	</keybind>
 
