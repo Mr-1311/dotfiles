@@ -9,7 +9,7 @@ cursor_shape = block
 dynamic_title = true
 filter_unmatched_urls = true
 font = Roboto Mono 13
-geometry = 980x530
+geometry = 1205x752
 icon_name = terminal
 modify_other_keys = false
 mouse_autohide = false
@@ -33,7 +33,8 @@ highlight = #30343e
 
 [colors]
 foreground = #d8dee8
-background = #2f343f
+background = #111516
+#background = #2f343f
 #background = rgba(24, 19, 24, .9)
 foreground_bold = #d0d6e0
 cursor = #b48ead

@@ -317,7 +317,7 @@
 
   <keybind key="C-A-t">
     <action name="Execute">
-      <command>termite</command>
+      <command>termite -e tmux</command>
     </action>
   </keybind>
 

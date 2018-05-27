@@ -17,7 +17,7 @@
 #xfce-mcs-manager &
 
 setxkbmap -layout "tr,us" -option "grp:alt_caps_toggle" &
-feh --bg-fill ~/Pictures/Wallpapers/space.png &
+feh --bg-fill ~/Pictures/Wallpapers/the-wall/wall &
 compton -b --config ~/.config/compton.conf &
 #compton -b &
 #plank &
