@@ -281,22 +281,22 @@
   </keybind>
 
   <!-- Keybindings for window switching with the arrow keys -->
-  <keybind key="W-S-Right">
+  <keybind key="W-A-Right">
     <action name="DirectionalCycleWindows">
       <direction>right</direction>
     </action>
   </keybind>
-  <keybind key="W-S-Left">
+  <keybind key="W-A-Left">
     <action name="DirectionalCycleWindows">
       <direction>left</direction>
     </action>
   </keybind>
-  <keybind key="W-S-Up">
+  <keybind key="W-A-Up">
     <action name="DirectionalCycleWindows">
       <direction>up</direction>
     </action>
   </keybind>
-  <keybind key="W-S-Down">
+  <keybind key="W-A-Down">
     <action name="DirectionalCycleWindows">
       <direction>down</direction>
     </action>
@@ -323,9 +323,19 @@
 
   <keybind key="W-space">
     <action name="Execute">
+      <command>rofi -show drun</command>
+    </action>
+  </keybind>
+  <keybind key="W-r">
+    <action name="Execute">
       <command>rofi -show run</command>
     </action>
-  </keybind>  
+  </keybind>
+  <keybind key="W-A-space">
+    <action name="Execute">
+      <command>rofi -show window</command>
+    </action>
+  </keybind> 
 
   <keybind key="Menu">
     <action name="ShowMenu">
@@ -359,22 +369,72 @@
     		<width>50%</width>
   		 </action>
 	</keybind>
-	
-	<keybind key="W-A-Left">
-      <action name="DirectionalTargetWest">
-        </action>
+
+	<keybind key="W-S-Left">
+      <action name="MoveRelative">
+      	<x>-45</x>
+    	<y>0</y>
+       </action>
 	</keybind>
-	<keybind key="W-A-Right">
-      <action name="DirectionalTargetEast">
-        </action>
+	<keybind key="W-S-Right">
+      <action name="MoveRelative">
+      	<x>45</x>
+    	<y>0</y>
+       </action>
 	</keybind>
-	<keybind key="W-A-Up">
-      <action name="DirectionalTargetNorth">
-        </action>
+	<keybind key="W-S-Up">
+      <action name="MoveRelative">
+      	<x>0</x>
+    	<y>-45</y>
+       </action>
 	</keybind>
-	<keybind key="W-A-Down">
-      <action name="DirectionalTargetSouth">
-        </action>
+	<keybind key="W-S-Down">
+      <action name="MoveRelative">
+      	<x>0</x>
+    	<y>45</y>
+       </action>
+	</keybind>
+
+	<keybind key="W-C-Left">
+  		<action name="ResizeRelative">
+    		<left>45</left>
+  		</action>
+	</keybind>
+	<keybind key="W-C-Right">
+  		<action name="ResizeRelative">
+    		<right>45</right>
+  		</action>
+	</keybind>
+	<keybind key="W-C-Up">
+  		<action name="ResizeRelative">
+    		<up>45</up>
+  		</action>
+	</keybind>
+	<keybind key="W-C-Down">
+  		<action name="ResizeRelative">
+    		<down>45</down>
+  		</action>
+	</keybind>
+
+	<keybind key="W-C-S-Left">
+  		<action name="ResizeRelative">
+    		<right>-45</right>
+  		</action>
+	</keybind>
+	<keybind key="W-C-S-Right">
+  		<action name="ResizeRelative">
+    		<left>-45</left>
+  		</action>
+	</keybind>
+	<keybind key="W-C-S-Up">
+  		<action name="ResizeRelative">
+    		<down>-45</down>
+  		</action>
+	</keybind>
+	<keybind key="W-C-S-Down">
+  		<action name="ResizeRelative">
+    		<up>-45</up>
+  		</action>
 	</keybind>
 
     <keybind key="XF86AudioRaiseVolume">
