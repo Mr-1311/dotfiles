@@ -1,0 +1,24 @@
+#!/bin/sh                                                                                                           
+                                                                                                                    
+change_Brightness() {                                                                                                   
+    killall dunst                                                                                                   
+    light "$1" 5                                                                                     
+    notify-send "Brightness" -t 1000 %`light`                                                                                                    
+}                                                                                                                   
+                                                                                                                    
+main() {                                                                                                            
+    case "$1" in                                                                                                    
+      up)                                                                                                           
+         change_Brightness -A                                                                                          
+         ;;                                                                                                         
+      down)                                                                                                         
+         change_Brightness -U                                                                                          
+         ;;                                                                                                                                                                                                                
+     *)                                                                                                             
+         printf "volume <command>\n"                                                                                
+         printf "          up \n"                                                                                   
+         printf "         down\n"                                                                                                                                                                      
+    esac                                                                                                            
+}                                                                                                                   
+                                                                                                                    
+main "$@"   

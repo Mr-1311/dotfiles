@@ -1,0 +1,29 @@
+#!/bin/sh
+
+change_volume() {
+    killall dunst
+    amixer -q sset Master "$1"
+    notify-send "Volume" -t 1000 -i notification-audio-volume-medium `amixer get Master|tail -n1|sed -E 's/.*\[([0-9]+)\%\].*/\1/'`
+}
+
+main() {
+    case "$1" in
+      up)
+         change_volume 5%+
+         ;;
+      down)
+         change_volume 5%-
+         ;;
+      mute)
+	 amixer -q sset Master toggle
+	 notify-send "Volume" -t 1000 -i notification-audio-volume-medium Muted
+	 ;;
+     *)
+         printf "volume <command>\n"
+         printf "          up \n"
+         printf "         down\n"
+	 printf "         mute\n"
+    esac
+}
+
+main "$@"

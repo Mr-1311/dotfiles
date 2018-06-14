@@ -50,7 +50,7 @@
 
 <theme>
   <!--<name>Raven-Cyan</name>-->
-  <name>Vent</name>
+  <name>Raven-Cyan</name>
   <titleLayout>SDIMC</titleLayout>
   <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -308,19 +308,17 @@
       <startupnotify>
         <enabled>true</enabled>
         <name>Konqueror</name>
-      </startupnotify>
+      </startupnotify>r
       <command>thunar</command>
     </action>
   </keybind>
 
   <!-- my keybindings-->
-
   <keybind key="C-A-t">
     <action name="Execute">
       <command>termite -e tmux</command>
     </action>
   </keybind>
-
   <keybind key="W-space">
     <action name="Execute">
       <command>rofi -show drun</command>
@@ -395,6 +393,13 @@
        </action>
 	</keybind>
 
+	<keybind key="A-r">
+	      <action name="Resize"/>
+	</keybind>
+	<keybind key="A-m">
+	      <action name="Move"/>
+	</keybind>
+
 	<keybind key="W-C-Left">
   		<action name="ResizeRelative">
     		<left>45</left>
@@ -439,27 +444,27 @@
 
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <command>amixer -q sset Master 5%+</command>
+        <command>/opt/bin/set-volume up</command>
       </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
-        <command>amixer -q sset Master 5%-</command>
+      	<command>/opt/bin/set-volume down</command>
       </action>
     </keybind>
     <keybind key="XF86AudioMute">
       <action name="Execute">
-        <command>amixer -q sset Master toggle</command>
+        <command>/opt/bin/set-volume mute</command>
       </action>
     </keybind>
     <keybind key="XF86MonBrightnessUp">
        <action name="Execute">
-         <command>light -A 5</command>
+         <command>/opt/bin/set-light up</command>
        </action>
      </keybind>
      <keybind key="XF86MonBrightnessDown">
        <action name="Execute">
-         <command>light -U 5</command>
+         <command>/opt/bin/set-light down</command>
        </action>
     </keybind>
     <keybind key="W-Tab">
