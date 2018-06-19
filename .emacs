@@ -10,33 +10,29 @@
     (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
 (package-initialize)
 
-(setq inhibit-startup-screen t)
-(menu-bar-mode 0)
-(tool-bar-mode 0)
-(global-linum-mode t)
-(set-default-font "Roboto Mono-16")
-;; (set-default-font "Source Code Pro-16")
-;; (setq default-frame-alist '((font . "Source Code Pro-16"))) ;; for daemon-load font correctly
-
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(company-quickhelp-color-background "#4F4F4F")
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["#757575" "#CD5542" "#4A8F30" "#7D7C21" "#4170B3" "#9B55C3" "#68A5E9" "gray43"])
+ '(company-quickhelp-color-background "#111516")
  '(company-quickhelp-color-foreground "#DCDCCC")
- '(custom-enabled-themes (quote (ample)))
+ '(custom-enabled-themes (quote (wombat)))
  '(custom-safe-themes
    (quote
-    ("36ca8f60565af20ef4f30783aa16a26d96c02df7b4e54e9900a5138fb33808da" "190a9882bef28d7e944aa610aa68fe1ee34ecea6127239178c7ac848754992df" default)))
+    ("fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "ed0b4fc082715fc1d6a547650752cd8ec76c400ef72eb159543db1770a27caa7" "c9ddf33b383e74dac7690255dd2c3dfa1961a8e8a1d20e401c6572febef61045" "6ac7c0f959f0d7853915012e78ff70150bfbe2a69a1b703c3ac4184f9ae3ae02" "bf798e9e8ff00d4bf2512597f36e5a135ce48e477ce88a0764cfb5d8104e8163" "36ca8f60565af20ef4f30783aa16a26d96c02df7b4e54e9900a5138fb33808da" "190a9882bef28d7e944aa610aa68fe1ee34ecea6127239178c7ac848754992df" default)))
  '(fci-rule-color "#383838")
  '(nrepl-message-colors
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(package-selected-packages
    (quote
-    (multiple-cursors powerline neotree org expand-region ample-theme zenburn-theme)))
+    (spacemacs-theme treemacs gruvbox-theme multiple-cursors powerline org expand-region ample-theme zenburn-theme)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(vc-annotate-background "#2B2B2B")
  '(vc-annotate-color-map
@@ -67,20 +63,41 @@
  ;; If there is more than one, they won't work right.
  )
 
+;; --------------
+
+(setq inhibit-startup-screen t)
+(menu-bar-mode 0)
+(tool-bar-mode 0)
+(global-linum-mode t)
+;; (set-default-font "Roboto Mono-16")
+;; (set-default-font "Source Code Pro-16")
+(setq default-frame-alist '((font . "Fira Mono-15"))) ;; for daemon-load font correctly
+
+(show-paren-mode 1)
+(setq show-paren-delay 0)
+
+(electric-pair-mode 1)
+(setq electric-pair-pairs '(
+                            (?\' . ?\')
+                            (?\{ . ?\})
+                            ) )
+
 (windmove-default-keybindings 'meta)
 (pending-delete-mode t)
+(ido-mode t)
 
 ;; theme stuff
 (powerline-center-theme)
 (setq powerline-default-separator 'slant)
-
+;; (set-face-attribute 'hl-line nil :background "#444444") ;; treemacs highlight line color
 
 ;; keybindins -- shortcuts
 (global-set-key (kbd "C-=") 'er/expand-region)
 
-(global-set-key [f8] 'neotree-toggle)
+(global-set-key [f8] 'treemacs)
 
 ;; multiple cursors
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
