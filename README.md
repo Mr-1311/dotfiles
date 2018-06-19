@@ -10,9 +10,9 @@
 
 ![](screen2.png)
 
-> my openbox theme is vent from [/addy-dclxvi/Openbox-Theme-Collections](https://github.com/addy-dclxvi/Openbox-Theme-Collections),
+> my openbox theme is "vent" from [/addy-dclxvi/Openbox-Theme-Collections](https://github.com/addy-dclxvi/Openbox-Theme-Collections),
 >
-> icon theme is papirus,
+> icon theme is papirus
 >
 > and zsh theme is [geometry](https://github.com/geometry-zsh/geometry).
 
