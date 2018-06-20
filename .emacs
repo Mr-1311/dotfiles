@@ -86,6 +86,7 @@
 (pending-delete-mode t)
 ;;(ido-mode t)
 (ivy-mode 1)
+(counsel-projectile-mode)
 
 ;; theme stuff
 (powerline-center-theme)
