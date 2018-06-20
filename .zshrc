@@ -4,7 +4,7 @@
 export ANDROID_HOME=/opt/android/Sdk/
 export GOPATH=~/Projects/go
 export PATH=$PATH:/opt/android/Sdk/platform-tools
-
+export PATH=$PATH:/opt/bin
 # Path to your oh-my-zsh installation.
   export ZSH=/home/m1311/.oh-my-zsh
 
@@ -69,6 +69,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # User configuration
 
@@ -99,7 +100,19 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+[[ $TMUX = "" ]] && export TERM="xterm-256color"
+
 alias quote="~/.config/conky/sidekick/res/quote-offline"
 alias quote-online="~/.config/conky/sidekick/res/quote-online"
 alias medleytext="sudo /opt/medleytext/medley-latest.AppImage"
-neofetch
+alias downmp3='f() { youtube-dl -o "~/Music/%(title)s.%(ext)s" --extract-audio --audio-format mp3 $1 };f'
+alias sub="subl3 ."
+alias vi="nvim"
+alias ee="exit"
+alias tls="tmux ls"
+alias tkill="tmux kill-session -a"
+alias em="emc"
+alias e="emc -nw"
+
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
