@@ -32,7 +32,7 @@
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(package-selected-packages
    (quote
-    (flycheck speed-type smex treemacs-projectile treemacs-evil counsel-projectile projectile ag counsel swiper ivy spacemacs-theme treemacs gruvbox-theme multiple-cursors powerline org expand-region ample-theme zenburn-theme)))
+    (flycheck speed-type smex counsel-projectile projectile ag counsel swiper ivy spacemacs-theme treemacs gruvbox-theme multiple-cursors powerline org expand-region ample-theme zenburn-theme)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(vc-annotate-background "#2B2B2B")
  '(vc-annotate-color-map
@@ -96,7 +96,7 @@
 ;; keybindins -- shortcuts
 (global-set-key (kbd "C-=") 'er/expand-region)
 
-(global-set-key [f8] 'treemacs)
+;;(global-set-key [f8] 'treemacs)
 
 ;; multiple cursors
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
