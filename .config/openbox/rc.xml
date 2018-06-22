@@ -343,7 +343,7 @@
 
   <keybind key="C-A-l">
     <action name="Execute">
-      <command>i3lock-fancy</command>
+      <command>betterlockscreen -l</command>
     </action>
   </keybind>  
 
@@ -392,14 +392,14 @@
     	<y>45</y>
        </action>
 	</keybind>
-
+<!--
 	<keybind key="A-r">
 	      <action name="Resize"/>
 	</keybind>
 	<keybind key="A-m">
 	      <action name="Move"/>
 	</keybind>
-
+-->
 	<keybind key="W-C-Left">
   		<action name="ResizeRelative">
     		<left>45</left>

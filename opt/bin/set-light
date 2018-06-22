@@ -3,7 +3,7 @@
 change_Brightness() {                                                                                                   
     killall dunst                                                                                                   
     light "$1" 5                                                                                     
-    notify-send "Brightness" -t 1000 %`light`                                                                                                    
+    notify-send "Brightness" -t 1000 `light`%                                                                                                    
 }                                                                                                                   
                                                                                                                     
 main() {                                                                                                            

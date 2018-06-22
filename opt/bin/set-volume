@@ -3,7 +3,7 @@
 change_volume() {
     killall dunst
     amixer -q sset Master "$1"
-    notify-send "Volume" -t 1000 -i notification-audio-volume-medium `amixer get Master|tail -n1|sed -E 's/.*\[([0-9]+)\%\].*/\1/'`
+    notify-send "Volume" -t 1000 -i notification-audio-volume-medium `amixer get Master|tail -n1|sed -E 's/.*\[([0-9]+)\%\].*/\1/'`%
 }
 
 main() {
