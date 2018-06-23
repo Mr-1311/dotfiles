@@ -22,7 +22,7 @@ font-3 = FontAwesome:size=11;2
 border-bottom-size = 1
 border-bottom-color = #2980b9
 
-modules-left =  close minify maximize cpu sep memory sep mpd
+modules-left =  close maximize minify cpu sep memory sep mpd
 modules-center = ewmh
 modules-right = volume sep backlight sep battery sep xkeyboard sep date 
 
@@ -250,23 +250,24 @@ click-middle = poweroff
 format-padding = 1
 format-foreground = #c0392b
 
-[module/minify]
-type = custom/script
-exec = echo ""
-click-left = ~/.config/polybar/minify.sh
-;click-right = 
-click-middle = reboot
-format-padding = 1
-format-foreground = #f39c12
 
 [module/maximize]
 type = custom/script
 exec = echo ""
 click-left = ~/.config/polybar/maximize.sh
 ;click-right = 
-click-middle = systemctl suspend
+click-middle = reboot
 format-padding = 1
 format-foreground = #27ae60
+
+[module/minify]
+type = custom/script
+exec = echo ""
+click-left =  ~/.config/polybar/minify.sh
+;click-right = 
+click-middle = betterlockscreen -s
+format-padding = 1
+format-foreground = #f39c12
 
 [module/sep]
 type = custom/script
