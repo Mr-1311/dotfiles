@@ -5,8 +5,8 @@
 #                  
 
 [global]
-    font = Iosevka Term 12
-    allow_markup = no
+    font = Roboto Mono 14
+    markup = no
     format = "<b>%s</b>\n%b"
     sort = yes
     indicate_hidden = yes
@@ -15,7 +15,7 @@
     show_age_threshold = 60
     word_wrap = yes
     ignore_newline = no
-    geometry = "300x8-32+32"
+    geometry = "650x8-32+32"
     shrink = yes
     transparency = 0
     idle_threshold = 120
@@ -32,12 +32,10 @@
     startup_notification = false
     dmenu = /usr/bin/rofi -p dunst:
     browser = /usr/bin/firefox -new-tab
+    frame_width = 0
+    frame_color = "#aeb38c"
     icon_position = off
-    icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
-
-[frame]
-    width = 0
-    color = "#aeb38c"
+#    icon_folders = 
 
 [shortcuts]
 
@@ -45,7 +43,7 @@
 
     close_all = ctrl+shift+space
 
-    history = ctrl+grave
+#    history =
 
     context = ctrl+shift+period
 
@@ -61,5 +59,5 @@
 
 [urgency_critical]
     background = "#212121"
-    foreground = "#EEFFFF"
+    foreground = "#ff6666"
     timeout = 0
