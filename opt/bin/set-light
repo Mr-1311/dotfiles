@@ -13,11 +13,13 @@ main() {
          ;;                                                                                                         
       down)                                                                                                         
          change_Brightness -U                                                                                          
-         ;;                                                                                                                                                                                                                
+         ;;
+    
      *)                                                                                                             
-         printf "volume <command>\n"                                                                                
+         printf "light <command>\n"                                                                                
          printf "          up \n"                                                                                   
-         printf "         down\n"                                                                                                                                                                      
+         printf "         down\n"
+         
     esac                                                                                                            
 }                                                                                                                   
                                                                                                                     
