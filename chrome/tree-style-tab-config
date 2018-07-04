@@ -75,10 +75,10 @@
 }
 
 .tab.active {
-	background-color: #8fa876;
+	background-color: #9305b7;
 }
 .tab.active:hover {
-	background-color: #8fa876 !important;
+	background-color: #4f1a6d !important;
 }
 
 
