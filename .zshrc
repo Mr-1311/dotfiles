@@ -3,10 +3,13 @@
 
 export ANDROID_HOME=/opt/android/Sdk/
 export GOPATH=~/Projects/go
+export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/opt/android/Sdk/platform-tools
 export PATH=$PATH:/opt/bin
+XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CONFIG_HOME
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/m1311/.oh-my-zsh
+export ZSH=/home/m1311/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -113,6 +116,9 @@ alias tls="tmux ls"
 alias tkill="tmux kill-session -a"
 alias em="emc"
 alias e="emc -nw"
-
+alias wfon="nmcli r wifi on"
+alias wfoff="nmcli r wifi off"
+alias wfconn="nmtui-connect"
+alias add="sudo pacman -S"
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
