@@ -9,10 +9,10 @@ change_volume() {
 main() {
     case "$1" in
       up)
-         change_volume 5%+
+         change_volume $2%+
          ;;
       down)
-         change_volume 5%-
+         change_volume $2%-
          ;;
       mute)
 	 amixer -q sset Master toggle
@@ -20,8 +20,8 @@ main() {
 	 ;;
      *)
          printf "volume <command>\n"
-         printf "          up \n"
-         printf "         down\n"
+         printf "          up {value}\n"
+         printf "         down {value}\n"
 	 printf "         mute\n"
     esac
 }

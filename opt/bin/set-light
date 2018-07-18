@@ -2,23 +2,23 @@
                                                                                                                     
 change_Brightness() {                                                                                                   
     killall dunst                                                                                                   
-    light "$1" 5                                                                                     
+    light "$1" "$2"
     notify-send "Brightness" -t 1000 `light`%                                                                                                    
-}                                                                                                                   
-                                                                                                                    
+}
+
 main() {                                                                                                            
     case "$1" in                                                                                                    
-      up)                                                                                                           
-         change_Brightness -A                                                                                          
+      up)                                                               
+         change_Brightness -A "$2"                                                                                         
          ;;                                                                                                         
       down)                                                                                                         
-         change_Brightness -U                                                                                          
+         change_Brightness -U "$2"                                                                                         
          ;;
     
      *)                                                                                                             
          printf "light <command>\n"                                                                                
-         printf "          up \n"                                                                                   
-         printf "         down\n"
+         printf "          up {value}\n"                                                                                   
+         printf "         down {value}\n"
          
     esac                                                                                                            
 }                                                                                                                   
