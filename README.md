@@ -16,7 +16,7 @@
 >
 > and zsh theme is [geometry](https://github.com/geometry-zsh/geometry).
 
-## Instalition
+## installation
 
 Move all the files to the home directory, assuming the root directory of the project is your home directory for installation.(of course, take a backup of your files before change them.)
 
