@@ -88,6 +88,8 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 #   export EDITOR='mvim'
 # fi
 
+export EDITOR='emc -nw'
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -111,7 +113,7 @@ alias medleytext="sudo /opt/medleytext/medley-latest.AppImage"
 alias downmp3='f() { youtube-dl -o "~/Music/%(title)s.%(ext)s" --extract-audio --audio-format mp3 $1 };f'
 alias sub="subl3 ."
 alias vi="nvim"
-alias ee="exit"
+alias q="exit"
 alias tls="tmux ls"
 alias tkill="tmux kill-session -a"
 alias em="emc"
@@ -120,5 +122,8 @@ alias wfon="nmcli r wifi on"
 alias wfoff="nmcli r wifi off"
 alias wfconn="nmtui-connect"
 alias add="sudo pacman -S"
+alias down-song='youtube-dl -o "~/Music/%(title)s.%(ext)s" --format m4a'
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
