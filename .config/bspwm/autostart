@@ -1,0 +1,7 @@
+#!/bin/zsh
+setxkbmap -layout "us,tr" -option "grp:alt_caps_toggle" &
+feh --bg-fill ~/Pictures/Wallpapers/the-wall/wall &
+~/.config/polybar/launch.sh &
+compton -b --config ~/.config/compton.conf &
+/usr/bin/xset r rate 250 50 &
+udiskie &
