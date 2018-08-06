@@ -17,6 +17,10 @@ alt + space; r; {r,v,d,D,t,p,P,m}
 	urxvt -e ranger ~/Pictures,\
 	urxvt -e ranger ~/Music}
 
+# download
+alt + space; d; m
+      	/opt/bin/dsong
+
 # terminal emulator
 super + Return
 	urxvt
