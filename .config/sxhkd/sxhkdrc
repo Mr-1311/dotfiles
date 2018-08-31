@@ -202,3 +202,7 @@ XF86AudioMute
 # music shortcuts
 XF86Audio{Play,Prev,Next}
 	music-{toggle,prev,next}
+
+# lock and suspend
+ctrl + alt + {l,s}
+       betterlockscreen -{l,s}
