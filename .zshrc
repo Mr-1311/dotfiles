@@ -87,8 +87,7 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # else
 #   export EDITOR='mvim'
 # fi
-
-export EDITOR='emc -nw'
+export EDITOR="emacsclient -a '' -c"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -110,18 +109,18 @@ export EDITOR='emc -nw'
 alias quote="~/.config/conky/sidekick/res/quote-offline"
 alias quote-online="~/.config/conky/sidekick/res/quote-online"
 alias medleytext="sudo /opt/medleytext/medley-latest.AppImage"
-alias downmp3='f() { youtube-dl -o "~/Music/%(title)s.%(ext)s" --extract-audio --audio-format mp3 $1 };f'
 alias sub="subl3 ."
 alias vi="nvim"
 alias q="exit"
 alias tls="tmux ls"
 alias tkill="tmux kill-session -a"
-alias em="emc"
 alias e="emc -nw"
+alias ef="emacs -Q -nw"
 alias wfon="nmcli r wifi on"
 alias wfoff="nmcli r wifi off"
-alias wfconn="nmtui-connect"
+alias wfs="nmtui-connect"
 alias add="sudo pacman -S"
+alias up="sudo pacman -Syu"
 alias down-song='youtube-dl -o "~/Music/%(title)s.%(ext)s" --format m4a'
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
