@@ -4,7 +4,7 @@
 
 # fast program shortcuts
 alt + space; {f,e,m}
-       	 {firefox,emacsclient -a '' -c "$@",urxvt -e ncmpcpp}
+       	 {firefox,emacsclient -a '' -c "$@",urxvt -name ncmpcpp -e ncmpcpp}
 
 # ranger shortcuts
 alt + space; r; {r,v,d,D,t,p,P,m}
