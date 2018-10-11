@@ -22,8 +22,8 @@ alt + space; d; m
       	/opt/bin/dsong
 
 # terminal emulator
-super + Return
-	urxvt
+super + {_,shift} + Return
+      	urxvt { ,-name floating}
 
 # program launcher
 super + space

@@ -18,6 +18,7 @@ bspc rule -a Emacs desktop='^3' follow=true
 #bspc rule -a Screenkey manage=off
 bspc rule -a feh state=floating focus=on
 bspc rule -a URxvt:ncmpcpp desktop='^4' follow=on
+bspc rule -a URxvt:floating state=floating
 
 bspc desktop web --layout monocle
 
