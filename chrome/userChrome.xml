@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<bindings id="UserChromeBindings"
+  xmlns="http://www.mozilla.org/xbl"
+  xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  xmlns:xbl="http://www.mozilla.org/xbl">
+
+  <binding id="user-chrome-js">
+    <implementation>
+      <constructor>
+        <![CDATA[
+          (function(){
+            const profileDir = OS.Constants.Path.profileDir;
+            const file = OS.Path.join(profileDir, 'chrome', 'userChrome.js');
+            const uri = OS.Path.toFileURI(file);
+            Services.scriptloader.loadSubScript(uri, window);
+          })();
+        ]]>
+      </constructor>
+    </implementation>
+  </binding>
+</bindings>

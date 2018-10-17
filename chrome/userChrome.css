@@ -1,67 +1,135 @@
-/* Hide main tabs toolbar */
-#TabsToolbar {
-    visibility: collapse;
-}
-/* Sidebar min and max width removal */
-#sidebar {
-    max-width: none !important;
-    min-width: 0px !important;
-}
-/* Hide splitter, when using Tree Style Tab. */
-#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] + #sidebar-splitter {
-    display: none !important;
-}
-/* Hide sidebar header, when using Tree Style Tab. */
-#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
-    visibility: collapse;
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+@namespace html url("http://www.w3.org/1999/xhtml");
+
+/**
+ * Due way style sheets are loaded, some styles in this sheet may not apply. To
+ * ensure that our styles work as intended, we load additional CSS via XBL and
+ * JavaScript.
+ */
+keyset#mainKeyset {
+  -moz-binding: url("userChrome.xml#user-chrome-js");
 }
 
-/* Shrink sidebar until hovered, when using Tree Style Tab. */
+
 :root {
-    --thin-tab-width: 34px;
-    --wide-tab-width: 200px;
-}
-#sidebar-box:not([sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]) {
-    min-width: var(--wide-tab-width) !important;
-    max-width: none !important;
-}
-#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] {
-    position: relative !important;
-    transition: all 300ms !important;
-    min-width: var(--thin-tab-width) !important;
-    max-width: var(--thin-tab-width) !important;
-}
-#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:hover {
-    transition: all 300ms !important;
-    min-width: var(--wide-tab-width) !important;
-    max-width: var(--wide-tab-width) !important;
-    
-    /* Negative right-margin to keep page from being pushed to the side. */
-    margin-right: calc((var(--wide-tab-width) - var(--thin-tab-width)) * -1) !important;
+  --mcolor:#323234;
+  --tcolor:#ffffff;
 }
 
-/* url bar config */
+/* HIDE DINOSAUR SHIT ---------------------------------------------------------------------------------------- */
+/*#PanelUI-button,
+#home-button,#reload-button,#stop-button,#forward-button,#back-button,
+#customizableui-special-spring1,#customizableui-special-spring2,#library-button,
+#sidebar-button,.tabs-newtab-button,.tab-close-button,.tab-icon-image,
+#identity-box,.urlbar-history-dropmarker,#pageActionButton,#pocket-button,#star-button,
+#wrapper-alltabs-button,#wrapper-new-tab-button,#wrapper-customizableui-special-spring1,
+#wrapper-customizableui-special-spring2,#wrapper-downloads-button,
+#nav-bar-overflow-button,#downloads-button,.titlebar-placeholder{
+  visibility: collapse !important;
+}*/
+.urlbar-icon{
+    visibility: collapse !important;
+}
+/* hides a ugly black bottom background under each unfocused tab and urlbar*/
+#navigator-toolbox{
+	--tabs-border-color: none !important;
+    --toolbox-border-bottom-color: none !important;
+}
+/* ----------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------- */
 
-#identity-box
-{
-    display: none !important;
+/* TABBAR ---------------------------------------------------------------------------------------------------- */
+/* 100% tabs width */
+.tabbrowser-tab[fadein]:not([pinned]) {
+	max-width: 100% !important;
+	font-size: 1.1em !important;
+}
+/* hides white borders between tabs */
+.tabbrowser-tab::after, .tabbrowser-tab::before {
+   border:none !important;
+}
+/* center tab text title */
+.tab-label {
+	-moz-box-flex: 1 !important; 
+	text-align: center !important;
+    color : var(--tcolor);
+}
+.tab-throbber{
+    margin: 0!important;
+    padding: 0!important;
 }
 
-#urlbar
-{
-    border: none !important;
+.tab-line{
+    visibility: collapse !important;
 }
 
-.urlbar-history-dropmarker
-{
-    display: none !important;
+.tab-background {
+	border: none !important;
+    background-attachment: none!important;
+    background-color: var(--mcolor) !important;
+    background-image: none!important;
 }
 
+.tabbrowser-tab:not([selected]) .tab-background {
+	border: none !important;
+    background-color: rgb(00, 00, 00) !important;
+}
+/* ----------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------- */
+
+
+/* URLBAR ---------------------------------------------------------------------------------------------------- */
+#urlbar{
+  font-size: 0.9em !important;
+  text-align: center !important;
+  color: var(--tcolor) !important; 
+  background-color: var(--mcolor) !important;
+  border: none !important;
+  box-shadow: none !important;
+  --toolbarbutton-border-radius: 0px !important;
+  margin: 0!important;
+}
+/* ----------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------- */
+
+/* AUTO HIDE TABBAR -------------------------------------------------------------------------------------------*/
+#tabbrowser-tabs, #tabbrowser-tabs > .tabbrowser-arrowscrollbox {
+	min-height: 0 !important;
+}
+
+#tabbrowser-tabs tab[first-visible-tab="true"][last-visible-tab="true"] {
+	visibility: collapse;
+}
+/* ----------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------- */
+
+/* AUTO HIDE URLBAR -------------------------------------------------------------------------------------------*/
+/* keep visible when urlbar is focused navbar is hovered or menubar/customization is open */
+/*
+
+
+
+
+#nav-bar:not([customizing]){
+  visibility: hidden;
+  margin-top: -24px !important;;
+  transition: visibility 0s linear 2s, margin-top 0s linear 2s;
+}
+#urlbar:focus,
+#navigator-toolbox:hover > #nav-bar:not([customizing]),
+#toolbar-menubar:not([inactive="true"]) ~ #nav-bar:not([customizing]) {
+  visibility: visible;
+  margin-top: 0px !important;;
+  transition-delay: 5s;
+}
+
+
+*/
 #page-action-buttons
 {
     display: none !important;
 }
-
-#urlbar .urlbar-input-box {
-    text-align: center;
+#identity-box
+{
+    display: none !important;
 }
