@@ -6,3 +6,5 @@ feh --bg-fill ~/Pictures/Wallpapers/the-wall/wall &
 /usr/bin/xset r rate 250 50 &
 udiskie &
 xsetroot -cursor_name left_ptr &
+emacs --daemon &
+urxvtd -q &

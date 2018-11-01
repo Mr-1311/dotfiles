@@ -4,18 +4,18 @@
 
 # fast program shortcuts
 alt + space; {f,e,m}
-       	 {firefox,emacsclient -a '' -c "$@",urxvt -name ncmpcpp -e ncmpcpp}
+       	 {firefox,emacsclient -a '' -c "$@",urxvtc -name ncmpcpp -e ncmpcpp}
 
 # ranger shortcuts
 alt + space; r; {r,v,d,D,t,p,P,m}
-      	{urxvt -e ranger,\
-	urxvt -e ranger ~/Videos,\ 
-	urxvt -e ranger ~/Documents,\
-	urxvt -e ranger ~/Downloads,\
-	urxvt -e ranger ~/temp,\
-	urxvt -e ranger ~/Projects,\
-	urxvt -e ranger ~/Pictures,\
-	urxvt -e ranger ~/Music}
+      	{urxvtc -e ranger,\
+	urxvtc -e ranger ~/Videos,\ 
+	urxvtc -e ranger ~/Documents,\
+	urxvtc -e ranger ~/Downloads,\
+	urxvtc -e ranger ~/temp,\
+	urxvtc -e ranger ~/Projects,\
+	urxvtc -e ranger ~/Pictures,\
+	urxvtc -e ranger ~/Music}
 
 # download
 alt + space; d; m
@@ -23,7 +23,7 @@ alt + space; d; m
 
 # terminal emulator
 super + {_,shift} + Return
-      	urxvt { ,-name floating}
+      	urxvtc { ,-name floating}
 
 # program launcher
 super + space
