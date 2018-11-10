@@ -2,10 +2,10 @@
 
 sxhkd &
 
-bspc monitor -d term web code music irssi VI VII
+bspc monitor -d one two three four five six seven eight nine ten
 
-bspc config border_width         2
-bspc config window_gap          15
+bspc config border_width         1
+bspc config window_gap           5
 
 bspc config split_ratio          0.50
 bspc config borderless_monocle   true
@@ -13,12 +13,14 @@ bspc config gapless_monocle      true
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Firefox desktop='^2' follow=true
-bspc rule -a Emacs desktop='^3' follow=true
+bspc rule -a Emacs desktop='^3' follow=true state=tiled
+bspc rule -a Steam:"Friends List" state=floating
 #bspc rule -a mpv state=floating
 #bspc rule -a Screenkey manage=off
 bspc rule -a feh state=floating focus=on
 bspc rule -a URxvt:ncmpcpp desktop='^4' follow=on
 bspc rule -a URxvt:floating state=floating
+bspc rule -a URxvt:float state=floating
 
 bspc desktop web --layout monocle
 
