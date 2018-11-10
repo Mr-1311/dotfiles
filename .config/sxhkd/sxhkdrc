@@ -25,6 +25,10 @@ alt + space; d; m
 super + {_,shift} + Return
       	urxvtc { ,-name floating}
 
+# draw terminal with mouse
+super + ctrl + Return
+      	/opt/bin/drawTerminal
+
 # program launcher
 super + space
 	rofi -show run
