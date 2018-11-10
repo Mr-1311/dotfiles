@@ -1,81 +1,93 @@
+[colors]
+background = ${xrdb:color0:#222}
+foreground = ${xrdb:color7:#222}
+foreground-alt = ${xrdb:color7:#222}
+primary = ${xrdb:color1:#222}
+secondary = ${xrdb:color2:#222}
+alert = ${xrdb:color3:#222}
+
 [bar/top]
 monitor = eDP-1
 width = 100%
-height = 19
-;override-redirect = true
+height = 35
 
-background = #2d3436
-foreground = #aaaaaa
+;background = ${colors.background}
+;foreground = ${colors.foreground}
+background = #000000
+foreground = #ffffff
+
+wm-restack = bspwm
 
 line-color = ${bar/bottom.background}
 line-size = 16
 
 spacing = 2
-padding-right = 3
-module-margin = 1
+padding-right = 0
+module-margin = 3
 
-font-0 = NotoSans-Regular:size=11;2
+separator = "|"
+
+font-0 = NotoSans-Regular:size=11;1
 font-1 = MaterialIcons:size=11;2
-font-2 = Termsynu:size=8:antialias=false;-2
+font-2 = Termsynu:size=9:antialias=false;2
 font-3 = FontAwesome:size=11;2
 
-border-bottom-size = 1
-border-bottom-color = #2980b9
-
-modules-left =  close maximize minify cpu sep memory sep mpd
-modules-center = ewmh
-modules-right = volume sep backlight sep battery sep xkeyboard sep date 
-
-tray-position = right
-tray-padding = 2
+modules-left = bspwm 
+modules-center = xwindow
+modules-right = volume backlight battery xkeyboard date close
 
 [bar/bottom]
 monitor = eDP-1
 bottom = true
-width = 18%
-height = 25
+width = 100%
+height = 26
 
-override-redirect = true
-
-;background = ${bar/top.background}
-background = #2f343f
+background = ${bar/top.background}
 foreground = ${bar/top.foreground}
 
+wm-restack = bspwm
+
 line-color = ${bar/top.background}
-line-size = 2
+line-size = 16
 
-spacing = 3
-padding-right = 4
-module-margin-left = 0
-module-margin-right = 6
+spacing = 2
+padding-right = 5
+module-margin = 3
 
-font-0 = NotoSans-Regular:size=11;0
-font-1 = unifont:size=10;-3
-font-2 = FontAwesome:size=10;-2
-font-3 = NotoSans-Regular:size=10;-1
-font-4 = MaterialIcons:size=10;-1
-font-5 = Termsynu:size=10:antialias=false;0
+separator = "|"
 
-modules-left = cpuBot memoryBot
+font-0 = NotoSans-Regular:size=11;2
+font-1 = unifont:size=11;2
+font-2 = FontAwesome:size=11;2
+font-3 = NotoSans-Regular:size=11;2
+font-4 = MaterialIcons:size=11;4
+font-5 = Termsynu:size=9:antialias=false;2
+
+modules-left =  mpd
+modules-center = whoami
+modules-right = wired-network wireless-network cpu memory filesystem info-kernel
+
+tray-position = right
 
 [module/backlight]
 type = internal/xbacklight
 ;format = <ramp> <bar>
 
 format = <ramp> <label>
-label = %{F#ffffff}%percentage%%
+label = %percentage%%
 
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
 
+
 [module/battery]
 type = internal/battery
 full-at = 98
 
-format-charging = <animation-charging> %{F#ffffff}<label-charging>
-format-discharging = <ramp-capacity> %{F#ffffff}<label-discharging>
-format-full = %{F#3498db}<ramp-capacity> %{F#3498db}<label-full>
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
 
 ramp-capacity-0 = 
 ramp-capacity-0-foreground = #f53c3c
@@ -101,46 +113,176 @@ animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-framerate = 750
 
+[module/bspwm]
+type = internal/bspwm
+label-focused = %name%
+label-focused-foreground = #eee4e5
+;label-focused-background = ${colors.my_background}
+label-focused-background = #42423d
+;label-focused-underline = #202020
+label-focused-padding = 2
+;label-focused-overline = #202020
+
+label-occupied = %name%
+;label-occupied = 
+;label-occupied-underline = #202020
+;label-occupied-foreground = #787376
+label-occupied-padding = 2
+;label-occupied-background = #202020
+
+pin-workspaces = true
+label-empty = 
+
+[module/bspwm-tmp2]
+type = internal/bspwm
+
+ws-icon-0 = term;
+ws-icon-1 = web;
+ws-icon-2 = code;
+ws-icon-3 = music;
+ws-icon-4 = irssi;
+ws-icon-default = 
+
+format = <label-state> <label-mode>
+
+label-dimmed-underline = ${root.background}
+
+label-focused = %icon%
+label-focused-foreground = #000
+label-focused-background = #fff
+label-focused-underline = ;#c9665e
+label-focused-font = 4
+label-focused-padding = 4
+
+label-occupied = %icon%
+label-occupied-foreground = #fff
+label-occupied-background = #444
+;label-occupied-underline = ;#666
+label-occupied-font = 4
+label-occupied-padding = 4
+
+label-urgent = %icon%
+label-urgent-foreground = #000
+;label-urgent-background = #bd2c40
+;label-urgent-underline = ;#9b0a20
+label-urgent-font = 4
+label-urgent-padding = 4
+
+label-empty = %icon%
+label-empty-foreground = #fff
+label-empty-font = 4
+label-empty-padding = 4
+
+label-monocle = 
+label-monocle-underline = ${module/bspwm.label-focused-underline}
+label-monocle-background = ${colors.background}
+label-monocle-padding = 2
+
+label-locked = 
+label-locked-foreground = #bd2c40
+label-locked-underline = ${module/bspwm.label-monocle-underline}
+label-locked-padding = ${module/bspwm.label-monocle-padding}
+
+label-sticky = 
+label-sticky-foreground = #fba922
+label-sticky-underline = ${module/bspwm.label-monocle-underline}
+label-sticky-padding = ${module/bspwm.label-monocle-padding}
+
+label-private = 
+label-private-foreground = #bd2c40
+label-private-underline = ${module/bspwm.label-monocle-underline}
+label-private-padding = ${module/bspwm.label-monocle-padding}
+
+[module/bspwm-tmp]
+type = internal/bspwm
+format = <label-state>
+
+label-active = 
+label-active-padding = 1
+label-occupied = 
+label-occupied-padding = 1
+label-empty = 
+label-empty-padding = 1
+
 [module/cpu]
 type = internal/cpu
 interval = 2
 format = <label>
-; label = CPU
-label = CPU %{F#ffffff}%percentage%%
+label = CPU %percentage%%
 
 [module/date]
 type = internal/date
-date =    %%{F#fff}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}
+date =    %%{F#99}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}
 date-alt = %%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
 
 [module/memory]
 type = internal/memory
-;format = <label> <bar-used>
-; label = RAM
 format = <label> 
-label = RAM %{F#ffffff}%percentage_used%%
+label = RAM %gb_used%
 
-bar-used-width = 10
-bar-used-foreground-0 = #aaff77
-bar-used-foreground-1 = #aaff77
-bar-used-foreground-2 = #fba922
-bar-used-foreground-3 = #ff5555
-bar-used-indicator = |
-bar-used-indicator-font = 6
-bar-used-indicator-foreground = #ff
-bar-used-fill = ─
-bar-used-fill-font = 6
-bar-used-empty = ─
-bar-used-empty-font = 6
-bar-used-empty-foreground = #444444
+[module/mpd]
+type = internal/mpd
+format-online ="    "<icon-prev> <icon-stop> <toggle> <icon-next>  <icon-repeat> <icon-random>   <label-time>  <label-song>
+
+
+icon-play = 
+icon-pause = 
+icon-stop = 
+icon-prev = 
+icon-next = 
+icon-random = 
+icon-repeat = 
+
+toggle-on-foreground =
+toggle-off-foreground = #55
+
+bar-progress-width = 45
+bar-progress-format = %{A4:mpdseek+2: A5:mpdseek-2:}%fill%%indicator%%empty%%{A A}
+bar-progress-indicator = |
+bar-progress-indicator-foreground = #ff
+bar-progress-indicator-font = 3
+bar-progress-fill = ─
+bar-progress-fill-foreground = #bb
+bar-progress-fill-font = 3
+bar-progress-empty = ─
+bar-progress-empty-font = 3
+bar-progress-empty-foreground = #44
+
+[module/wireless-network]
+type = internal/network
+interface = wlp2s0
+interval = 3.0
+ping-interval = 10
+
+format-connected = <ramp-signal><label-connected>
+label-connected = %essid%     %downspeed:3%     %upspeed:3%
+label-disconnected =    not connected
+label-disconnected-foreground = #66
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+
+animation-packetloss-0 = 
+animation-packetloss-0-foreground = #ffa64c
+animation-packetloss-1 = 
+animation-packetloss-1-foreground = ${bar/top.foreground}
+animation-packetloss-framerate = 500
+
+[module/wired-network]
+type = internal/network
+interface = enp3s0
+interval = 3.0
+
+label-connected =    %{T3}%local_ip%%{T-}  %downspeed:3%  %upspeed:3%
+label-disconnected-foreground = #66
 
 [module/volume]
 type = internal/volume
-speaker-mixer = Speaker
-headphone-mixer = Headphone
-headphone-id = 9
 
-format-volume = <ramp-volume> %{F#ffffff}<label-volume>
+format-volume = <ramp-volume> <label-volume>
 label-muted =   muted
 label-muted-foreground = #66
 
@@ -149,175 +291,87 @@ ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-3 = 
 
+[module/powermenu]
+type = custom/menu
+
+format-padding = ;3
+
+label-open = 
+label-close = 
+label-separator = " - "
+
+menu-0-0 = Terminate WM
+menu-0-0-foreground = #abd2d3
+menu-0-0-exec = bspc quit -1
+menu-0-1 = Reboot
+menu-0-1-foreground = #abd2d3
+menu-0-1-exec = menu_open-1
+menu-0-2 = Power off
+menu-0-2-foreground = #abd2d3
+menu-0-2-exec = menu_open-2
+
+menu-1-0 = Cancel
+menu-1-0-foreground = #abd2d3
+menu-1-0-exec = menu_open-0
+menu-1-1 = Reboot
+menu-1-1-foreground = #abd2d3
+menu-1-1-exec = sudo reboot
+
+menu-2-0 = Power off
+menu-2-0-foreground = #abd2d3
+menu-2-0-exec = sudo poweroff
+menu-2-1 = Cancel
+menu-2-1-foreground = #abd2d3
+menu-2-1-exec = menu_open-0
+
 [module/clock]
 type = internal/date
 interval = 2
 date = %%{F#999}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}
 
+[module/xwindow]
+type = internal/xwindow
+label-maxlen = 75
+label-foreground = #bbb
+
 [module/xkeyboard]
 type = internal/xkeyboard
-
 format = <label-layout>
+label-layout =   %layout%
 
-label-layout =  %{F#fff}%layout% 
+[module/filesystem]
+type = internal/fs
 
-[module/ewmh]
-type = internal/xworkspaces
-
-; Only show workspaces defined on the same output as the bar
-;
-; Useful if you want to show monitor specific workspaces
-; on different bars
-;
-; Default: false
-pin-workspaces = true
-
-; Create click handler used to focus desktop
-; Default: true
-enable-click = true
-
-; Create scroll handlers used to cycle desktops
-; Default: true
-enable-scroll = false
-
-; icon-[0-9]+ = <desktop-name>;<icon>
-; NOTE: The desktop name needs to match the name configured by the WM
-; You can get a list of the defined desktops using:
-; $ xprop -root _NET_DESKTOP_NAMES
-;icon-0 = desktop 1;
-;icon-1 = desktop 2;
-;icon-2 = desktop 3;
-;icon-3 = desktop 4;
-icon-default = 
-
-; Available tags:
-;   <label-monitor>
-;   <label-state> - gets replaced with <label-(active|urgent|occupied|empty)>
-; Default: <label-state>
-format = <label-state>
+mount-0 = /
 
 ; Available tokens:
-;   %name%
-; Default: %name%
-label-monitor = %name%
+;   %mountpoint%
+;   %type%
+;   %fsname%
+;   %percentage_free%
+;   %percentage_used%
+;   %total%
+;   %free%
+;   %used%
+label-mounted = %mountpoint%: %used%
 
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-; Default: %icon%  %name%
-label-active = %icon%
-label-active-padding = 1
-label-active-foreground = #ffffff
-;label-active-background = #3f3f3f
-;label-active-underline = #fba922
+[module/info-kernel]
+type = custom/script
+exec = uname -r
+interval = 1024
 
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-; Default: %icon%  %name%
-label-occupied = %icon%
-;label-occupied-padding = 7
-label-occupied-underline = #555555
-
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-; Default: %icon%  %name%
-label-urgent = %icon%
-;label-urgent-padding = 7
-label-urgent-foreground = #000000
-label-urgent-background = #bd2c40
-label-urgent-underline = #9b0a20
-
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-; Default: %icon%  %name%
-label-empty = %icon%
-label-empty-padding = 1
-label-empty-foreground = #55
+[module/whoami]
+type = custom/script
+exec = whoami
+interval = 1024
 
 [module/close]
 type = custom/script
-exec = echo ""
+exec = echo "    "
 click-left = ~/.config/polybar/close.sh
-;click-right = 
+click-right = betterlockscreen -s
 click-middle = poweroff
-format-padding = 1
-format-foreground = #c0392b
-
-
-[module/maximize]
-type = custom/script
-exec = echo ""
-click-left = ~/.config/polybar/maximize.sh
-;click-right = 
-click-middle = reboot
-format-padding = 1
-format-foreground = #27ae60
-
-[module/minify]
-type = custom/script
-exec = echo ""
-click-left =  ~/.config/polybar/minify.sh
-;click-right = 
-click-middle = betterlockscreen -s
-format-padding = 1
-format-foreground = #f39c12
-
-[module/sep]
-type = custom/script
-exec = echo "/"
-
-
-[module/mpd]
-type = internal/mpd
-format-online = <icon-prev> <toggle> <icon-next> <label-song>
-
-label-song = %title%
-
-icon-prev = 
-;icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-
-label-song-maxlen = 35
-label-song-ellipsis = true
+;format-padding = 1
+;format-foreground = #c0392b
 
 ; vim:ft=dosini
-;-----------------------BOT-----------------------------
-
-[module/cpuBot]
-type = internal/cpu
-interval = 2
-format = <label>
-;label = CPU
-label = CPU %{F#fba922}%percentage%%
-
-
-
-[module/memoryBot]
-type = internal/memory
-format = <label> <bar-used>
-label = RAM %{F#fba922}%percentage_used%%
-;format = <label> 
-;label = RAM %{F#fba922}%gb_used% / %gb_free% : %percentage_used%%
-
-bar-used-width = 13
-bar-used-foreground-0 = #aaff77
-bar-used-foreground-1 = #aaff77
-bar-used-foreground-2 = #fba922
-bar-used-foreground-3 = #ff5555
-bar-used-indicator = |
-bar-used-indicator-font = 6
-bar-used-indicator-foreground = #ff
-bar-used-fill = ─
-bar-used-fill-font = 6
-bar-used-empty = ─
-bar-used-empty-font = 6
-bar-used-empty-foreground = #666666
