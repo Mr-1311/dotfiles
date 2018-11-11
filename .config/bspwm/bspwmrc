@@ -22,7 +22,7 @@ bspc rule -a URxvt:ncmpcpp desktop='^4' follow=on
 bspc rule -a URxvt:floating state=floating
 bspc rule -a URxvt:float state=floating
 
-bspc desktop web --layout monocle
+bspc desktop two --layout monocle
 
 # Autostart
 /home/m1311/.config/bspwm/autostart &
