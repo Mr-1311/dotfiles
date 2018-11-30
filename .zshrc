@@ -122,7 +122,8 @@ alias wfs="nmtui-connect"
 alias add="sudo pacman -S"
 alias up="sudo pacman -Syu"
 alias down-song='youtube-dl -o "~/Music/%(title)s.%(ext)s" --format m4a'
+alias android-emulator="/opt/android/Sdk/tools/emulator -avd "emuApi26""
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-
+figlet -t -c -f larry3d 1311
