@@ -2,10 +2,11 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 export ANDROID_HOME=/opt/android/Sdk/
-export GOPATH=~/Projects/go
+export GOPATH=~/dev/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/opt/android/Sdk/platform-tools
 export PATH=$PATH:/opt/bin
+export PATH="$HOME/.cargo/bin:$PATH"
 XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CONFIG_HOME
 # Path to your oh-my-zsh installation.
@@ -14,9 +15,20 @@ export ZSH=/home/m1311/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="geometry/geometry"
+#ZSH_THEME="geometry/geometry"
+eval "$(starship init zsh)"
+#GEOMETRY_SYMBOL_PROMPT=""
+#GEOMETRY_SYMBOL_PROMPT=""
+#GEOMETRY_SYMBOL_PROMPT=""
 
-GEOMETRY_SYMBOL_PROMPT=""
+#GEOMETRY_SYMBOL_GIT_DIRTY=""                 # when repo has "dirty" state
+#GEOMETRY_SYMBOL_GIT_CLEAN=""                 # when repo has "clean" state
+#GEOMETRY_SYMBOL_GIT_BARE=""                  # when repo is bare (no working tree)
+#GEOMETRY_SYMBOL_GIT_REBASE="ddd"           # when in middle of rebase
+#GEOMETRY_SYMBOL_GIT_UNPULLED="eee"              # when there are unpulled changes
+#GEOMETRY_SYMBOL_GIT_UNPUSHED="fff"              # when there are unpushed changes
+#GEOMETRY_SYMBOL_GIT_CONFLICTS_SOLVED="zzz"      # when all conflicts have been solved
+#GEOMETRY_SYMBOL_GIT_CONFLICTS_UNSOLVED="xxx"    # when there are still unsolved conflicts
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -114,15 +126,17 @@ alias vi="nvim"
 alias q="exit"
 alias tls="tmux ls"
 alias tkill="tmux kill-session -a"
+alias t="tmux"
 alias e="emc -nw"
 alias ef="emacs -Q -nw"
+alias ra="ranger"
 alias wfon="nmcli r wifi on"
 alias wfoff="nmcli r wifi off"
 alias wfs="nmtui-connect"
 alias add="sudo pacman -S"
 alias up="sudo pacman -Syu"
-alias down-song='youtube-dl -o "~/Music/%(title)s.%(ext)s" --format m4a'
-alias android-emulator="/opt/android/Sdk/tools/emulator -avd emuApi26Nexus"
+alias down-song='youtube-dl -o "~/songs/%(title)s.%(ext)s" --format m4a'
+alias android-emulator="/opt/android/Sdk/tools/emulator -avd emuApi26Nexus -camera-back webcam0 -camera-front webcam0"
 alias android-emulator2="/opt/android/Sdk/tools/emulator -avd emuApi26Nexus -netdelay none -netspeed full -netfast -accel on -nojni"
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

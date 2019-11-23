@@ -1,0 +1,12 @@
+#!/bin/zsh
+setxkbmap -layout "us,tr" -option "grp:alt_caps_toggle" &
+~/.config/polybar/launch.sh &
+emacs --daemon &
+#compton &
+feh --bg-fill ~/pics/Wallpapers/the-wall/wall &
+#xsetroot -solid "#000000" &
+/usr/bin/xset r rate 200 60 &
+xsetroot -cursor_name left_ptr &
+urxvtd -q &
+udiskie &
+/opt/bin/is-battery-low &
